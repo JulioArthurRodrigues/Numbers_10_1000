@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idadee</title>
+
+    <script>
+        function CalcularIdade()
+        {
+            let anoAtual = new Date().getFullYear();
+            let anoNasc = document.getElementById("ano").value;
+
+            if (anoNasc < 1900)
+            {
+                alert("Entrada Inválida!");
+            }
+            else
+            {
+                let idade = anoAtual - parseInt(anoNasc);
+                let msg = "";
+
+                if (idade >= 18)
+                {
+                msg = "Maior de Idade";
+                }
+                else
+                {
+                    msg = "Menor de Idade";
+                }
+
+                document.getElementById("resultado").innerHTML = msg + ", idade: " + idade;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="ano" id="ano">
+    <button onclick="CalcularIdade()">Calcular Idade</button>
+    <p id="resultado"></p>
+
+</body>
+</html>
